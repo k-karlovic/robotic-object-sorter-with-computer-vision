@@ -1,0 +1,4 @@
+urllib3
+numpy
+opencv-python
+serial
