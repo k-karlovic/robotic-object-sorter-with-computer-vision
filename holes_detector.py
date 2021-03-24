@@ -7,7 +7,7 @@ import time
 # The USB port to which the Arduino is connected
 ser1 = serial.Serial('COM3', 9600)
 
-# Defining the lower and upper limits in the HSV color display model
+# Defining the lower and upper boundaries in the HSV color display model
 lower = {'item': (0, 0, 163)}
 upper = {'item': (180, 30, 254)}
 
@@ -72,11 +72,11 @@ while True:
     # Convert BGR color to gray
     gray = cv2.cvtColor(res, cv2.COLOR_BGR2GRAY)
 
-    # Add color limits
-    _, gray_threshed = cv2.threshold(gray, 140, 255, cv2.THRESH_BINARY_INV)
+    # Add color boundaries
+    _, gray_threshold = cv2.threshold(gray, 140, 255, cv2.THRESH_BINARY_INV)
     
     # Bilateral filter
-    bilateral_filtered_image = cv2.bilateralFilter(gray_threshed, 5, 175, 175)
+    bilateral_filtered_image = cv2.bilateralFilter(gray_threshold, 5, 175, 175)
 
     # Canny edge detection
     edge_detected_image = cv2.Canny(bilateral_filtered_image, 25, 200)
