@@ -1,16 +1,18 @@
 # Item_Sorter
-orting and controlling items with a certain number of holes by a robotic arm!
+Sorting and controlling items with a certain number of holes by a robotic arm!
+
+![Item sorter](https://github.com/k-karlovic/Item_Sorter/blob/main/videos/item_sorter.mp4?raw=true)
 
 &nbsp;
 ## Table of Contents or Overview
 * [Summary](#summary)
 * [Equipment](#equipment)
-	* [Robotic arm Mover4](#robotic arm mover4)
-	* [Samsung S8+ camera](#samsung s8+ camera)
+	* [Robotic arm Mover4](#robotic-arm-mover4)
+	* [Samsung S8+ camera](#samsung-s8-camera)
 	* [Conveyor](#conveyor)
 	* [Arduino](#arduino)
-* [Object detection method](#object detection method)
-* [Holes detection method](#holes detection method)
+* [Object detection method](#object-detection-method)
+* [Holes detection method](#holes-detection-method)
 * [Conclusion](#conclusion)
 * [Setup](#setup)
 
@@ -18,24 +20,18 @@ orting and controlling items with a certain number of holes by a robotic arm!
 ## Summary
 This project involves finding a defined workpiece with holes on the conveyor, controlling the number of holes on the workpiece, and sorting them using a robotic arm. The workpiece on the conveyor is detected by the HSV model of the color space over the camera. Using functions in OpenCV (cv2.Canny() and cv2.findContours()) holes (closed contours) are found on the workpiece. Closed contours are counted, and the workpieces are sorted by a robotic arm into correct and defective workpieces.
 
-![Item sorter](https://github.com/k-karlovic/Item_Sorter/blob/main/videos/item_sorter.mp4?raw=true)
-
 &nbsp;
 ## Equipment
 For this project, a 4-axis Mover4 robot, a Samsung S8+ mobile phone camera with a resolution of 12.0 MP, a conveyor, and an Arduino were used to connect the robotic arm and laptop. The main programming language used to accomplish the final work is Python with additional packages installed. The Arduino uses ArduinoIDE, and the robotic arm uses CPRog software.
-
 &nbsp;
 ### Robotic arm Mover4
 The robotic arm consists of 4 axes, which allow work in space. At the end of the robotic arm, various tools (electromagnet or gripper) can be placed. With a radius of 55 cm, the robot can lift objects weighing 500g.
-
 &nbsp;
 ### Samsung S8+ camera
 The mobile phone serves as an IP webcam and images from the mobile phone are read via the IP address.
-
 &nbsp;
 ### Conveyor
 The conveyor is used to transport the object from one workplace to another, and the object is stopped by a sensor at the end of the conveyor.
-
 &nbsp;
 ### Arduino
 The Arduino is connected via USB to a computer and is programmed using the ArduinoIDE softwer. The Arduino will serve as a circuit for communicating with the robot, which sends 5V to the input channels as a logical one and 0V as a logical zero.
@@ -60,7 +56,6 @@ The correct workpiece would be a 2 hole item, so this workpiece on the image abo
 &nbsp;
 ## Conclusion
 
-
 &nbsp;
 ## Setup
 ### 1. Equipment
@@ -72,10 +67,13 @@ The correct workpiece would be a 2 hole item, so this workpiece on the image abo
 	*USB cable
 * Computer
 ### 2. Install Requirements
-*[ArduinoIDE](https://www.arduino.cc/en/software)
-*[CPRog](https://cpr-robots.com/robot-control)
-*[Python](https://www.python.org/downloads/)
-To install the necessary packages in python run **'pip install -r requirements.txt'**.
+* [ArduinoIDE](https://www.arduino.cc/en/software)
+
+* [CPRog](https://cpr-robots.com/robot-control)
+
+* [Python](https://www.python.org/downloads/)
+
+To install the necessary packages in python run **`pip install -r requirements.txt`**.
 ### 3. Connect the Arduino with the robotic arm
 Connect one end of the wire to pin 12 on the Arduino and the other end to pin 4 on the robot arm. Connect another wire to pin 13 on the Arduino and pin 5 on the robotic arm.
 ### 4. Connect the Arduino with the computer
@@ -83,7 +81,7 @@ Connect the Arduino using a USB cable to the computer
 ### 5. Connect the cammera with the computer
 Download the [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en&gl=US) app on your mobile phone and start the server. Your phone and your computer must be connected to the same wifi.
 
-######You can use any camera, such as a webcam that is connected with a USB cable.
+`You can use any camera, such as a webcam that is connected with a USB cable.`
 ### 6. Run the hsv_color_detector.py script
 Position the workpiece so that it is visible in the image and press the I button to display the workpiece. To determine the color boundary it is necessary to crop the object (press the left mouse button in the upper left corner and release the button in the lower right corner). When you have finished, press the c button and 3 windows will open. On which it is visible that the object is marked in white, and everything else in black. If you are not satisfied, repeat the procedure.
 ### 7. Enter the color boundaries
