@@ -75,7 +75,7 @@ The robotic arm consists of 4 axes, which allow work in space. At the end of the
 <br />
 D-Sub Male consists of 9 pins of which pins 4, 5, 6, and 7 are input pins.
 <br />
-
+<br />
 <br />
 <p align="center">
   <img width="450" height="250" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/pins_on_robot_arm.PNG?raw=true"/>
@@ -117,7 +117,7 @@ There is also some disturbance in the upper-right edge, which is present due to 
 After that, the boundaries are entered in the script `holes_detector.py`. In that script, a kernel is created and parameters are set to find the colors of objects. If a contour is found a red circle is created around the contour.
 <br />
 <br />
-<br />
+
 <p align="center">
   <img width="300" height="250" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/circle.JPG?raw=true"/>
 </p>
