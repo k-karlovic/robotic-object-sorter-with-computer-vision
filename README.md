@@ -19,6 +19,7 @@ Sorting and controlling items with a certain number of holes by a robotic arm!
 * [Object detection method](#object-detection-method)
 * [Holes detection method](#holes-detection-method)
 * [Conclusion](#conclusion)
+* [Literature](#literature)
 
 &nbsp;
 ## Summary
@@ -136,10 +137,22 @@ The correct workpiece would be a 2 hole item, so this workpiece on the image abo
 
 &nbsp;
 ## Conclusion
+This project contains two scripts related to the vision system of robots, the so-called robotic vision. The first script `hsv_color_detector.py` determines the color boundaries in the HSV model and is needed because it serves as a basis for the script `holes_detector.py`. After the first script sets the boundaries, in the same HSV color space model, the second script will recognize the object. The located holes are counted, after which the correctness of the obtained number is checked. One of the difficulties is the reflection of light on the conveyor that was detected after defining the boundaries of the HSV color space model. Next, contours that were not properly marked or interrupted followed. In that case, holes were found where there were none. The solution to such a problem is achieved by setting the parameters of different filters, defining the search area of the closed contour and its approximation. In general, the small diameter of holes requires small closed contours which makes it a big problem in practice. Namely, the function marks and recognizes every irregularity on the observed object as a hole. Some minor disturbances were ignored as they did not affect the final result. Changing the environment or brightness in the room could cause interference that leads to the wrong result when controlling the object. In this case, individual parameters would have to be changed or certain image filters would have to be added and changed. The problem of communication with the robot was solved using an open computer and software platform - Arduino. By sending a logical one that is equivalent to 5V, the robot program is started, and with it the robot itself. The robotic vision program can be further improved to perform other functions such as recognizing the complete drilling of the hole or the appropriate positioning of the hole and sorting defective objects with a robotic arm and so on.
 
+&nbsp;
+## Literature
 
+https://www.arduino.cc/en/Tutorial/HomePage
 
+https://cpr-robots.com/education#Mover4
 
+Bradski, G.; Kaehler, A..: „ Learning OpenCV“, O’Reilly Media., Gravenstein Highway North, Sebastopol, 2008.
+
+García, G.,B.; Suarez, O., D.; Aranda, J.,L., E.; Tercero, J., S.; Gracia, I., S.; Enano, N., V.: „ Learning Image Processing with OpenCV“, Packt Publishing., Birmingham, 2015.
+
+https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html
+
+https://pythonprogramming.net/loading-images-python-opencv-tutorial/
 
 
 
