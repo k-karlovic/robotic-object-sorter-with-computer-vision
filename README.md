@@ -1,6 +1,7 @@
 # Robotic item sorter with computer vision
 Sorting and controlling items with a certain number of holes by a robotic arm!
-
+<br />
+<br />
 <p align="center">
   <a href="https://youtu.be/jOdGGo3MNKM"> <img width="750" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/youtube_image.png?raw=true"/> </a>
 </p>
@@ -21,11 +22,9 @@ Sorting and controlling items with a certain number of holes by a robotic arm!
 &nbsp;
 ## Summary
 This project involves finding a defined workpiece with holes on the conveyor, controlling the number of holes on the workpiece, and sorting them using a robotic arm. The workpiece on the conveyor is detected by the HSV model of the color space over the camera. Using functions in OpenCV (cv2.Canny() and cv2.findContours()) holes (closed contours) are found on the workpiece. Closed contours are counted, and the workpieces are sorted by a robotic arm into correct and incorrect workpieces.
-
 &nbsp;
 ## Equipment
 For this project, a 4-axis Mover4 robot, a Samsung S8+ mobile phone camera with a resolution of 12.0 MP, a conveyor, and an Arduino were used to connect the robotic arm and laptop. The main programming language used to accomplish the final work is Python with additional packages installed. The Arduino uses ArduinoIDE, and the robotic arm uses CPRog software.
-
 &nbsp;
 ### Robotic arm Mover4
 The robotic arm consists of 4 axes, which allow work in space. At the end of the robotic arm, various tools (electromagnet or gripper) can be placed. With a radius of 55 cm, the robot can lift objects weighing 500g.
@@ -37,7 +36,6 @@ The robotic arm consists of 4 axes, which allow work in space. At the end of the
 ### Samsung S8+ camera
 
 The mobile phone serves as an IP webcam and images from the mobile phone are read via the IP address.
-
 &nbsp;
 ### Conveyor
 The conveyor is used to transport the object from one workplace to another, and the object is stopped by a sensor at the end of the conveyor.
