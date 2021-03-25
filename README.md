@@ -1,8 +1,9 @@
 # Robotic item sorter with computer vision
 Sorting and controlling items with a certain number of holes by a robotic arm!
 
-![Item sorter](https://github.com/k-karlovic/Item_Sorter/blob/main/videos/item_sorter.mp4?raw=true)
-
+<p align="center">
+  <a href="https://youtu.be/jOdGGo3MNKM"> <img width="750" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/youtube_image.png?raw=true"/> </a>
+</p>
 
 &nbsp;
 ## Table of Contents or Overview
@@ -19,40 +20,60 @@ Sorting and controlling items with a certain number of holes by a robotic arm!
 
 &nbsp;
 ## Summary
-This project involves finding a defined workpiece with holes on the conveyor, controlling the number of holes on the workpiece, and sorting them using a robotic arm. The workpiece on the conveyor is detected by the HSV model of the color space over the camera. Using functions in OpenCV (cv2.Canny() and cv2.findContours()) holes (closed contours) are found on the workpiece. Closed contours are counted, and the workpieces are sorted by a robotic arm into correct and defective workpieces.
+This project involves finding a defined workpiece with holes on the conveyor, controlling the number of holes on the workpiece, and sorting them using a robotic arm. The workpiece on the conveyor is detected by the HSV model of the color space over the camera. Using functions in OpenCV (cv2.Canny() and cv2.findContours()) holes (closed contours) are found on the workpiece. Closed contours are counted, and the workpieces are sorted by a robotic arm into correct and incorrect workpieces.
 
 &nbsp;
 ## Equipment
 For this project, a 4-axis Mover4 robot, a Samsung S8+ mobile phone camera with a resolution of 12.0 MP, a conveyor, and an Arduino were used to connect the robotic arm and laptop. The main programming language used to accomplish the final work is Python with additional packages installed. The Arduino uses ArduinoIDE, and the robotic arm uses CPRog software.
+
 &nbsp;
 ### Robotic arm Mover4
 The robotic arm consists of 4 axes, which allow work in space. At the end of the robotic arm, various tools (electromagnet or gripper) can be placed. With a radius of 55 cm, the robot can lift objects weighing 500g.
+<p align="center">
+  <img width="350" height="450" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/robot_arm.jpg?raw=true"/>
+</p>
+
 &nbsp;
 ### Samsung S8+ camera
+
 The mobile phone serves as an IP webcam and images from the mobile phone are read via the IP address.
+
 &nbsp;
 ### Conveyor
 The conveyor is used to transport the object from one workplace to another, and the object is stopped by a sensor at the end of the conveyor.
+<p align="center">
+  <img width="450" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/conveyor.jpg?raw=true"/>
+</p>
+
 &nbsp;
 ### Arduino
 The Arduino is connected via USB to a computer and is programmed using the ArduinoIDE softwer. The Arduino will serve as a circuit for communicating with the robot, which sends 5V to the input channels as a logical one and 0V as a logical zero.
+<p align="center">
+  <img width="350" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/arduino.jpg?raw=true"/>
+</p>
 
 &nbsp;
 ## Object detection method
 The program starts finding holes only after it detects an object. So it is necessary to choose and adjust the method that detects the object. The chosen method is based on recognition via the HSV color model. It is necessary to set the boundaries within which the color of the object is located. To find these boundaries, the script `hsv_color_detector.py` is attached. It works on the principle of setting the subject to the appropriate position and then pressing the "i" key to save the image. This image is then displayed and the area from which the color boundary is to be drawn can be determined with the mouse. The "c" key completes the determination and three windows are displayed. The first shows the whole image with the area selected. The second image shows only the area that is selected. On the third, the color chosen was converted to white, and the others became black. This shows that the procedure was done correctly, and if black is visible on the object, then the procedure should be repeated.After that, the boundaries min H = {}, min S = {}, min V = {}, max H = {}, max S = {} and max V = {} are thrown out.
 
-![HSV boundaries](https://github.com/k-karlovic/Item_Sorter/blob/main/images/HSV_boundaries.JPG?raw=true)
+<p align="center">
+  <img width="750" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/HSV_boundaries.JPG?raw=true"/>
+</p>
 
 There is also some disturbance in the upper-right edge, which is present due to the reflection of light. The procedure should be repeated or the boundaries should be set manually.
 After that, the boundaries are entered in the script `holes_detector.py`. In that script, a kernel is created and parameters are set to find the colors of objects. If a contour is found a red circle is created around the contour.
 
-![Circle](https://github.com/k-karlovic/Item_Sorter/blob/main/images/circle.JPG?raw=true)
+<p align="center">
+  <img width="350" height="300" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/circle.JPG?raw=true"/>
+</p>
 
 &nbsp;
 ## Holes detection method
 Once the boundaries of the HSV color rendering model are defined and the object is spotted, an aperture is found. Finding openings is based on finding closed contours. Uploaded images are converted to Grayscale (gray image) and processed using a Threshold. The threshold is binary and inverse with certain parameters. The image is further filtered using a bilateral filter. Edge detection is introduced to the processed image using the Canny Edge detection method and contours can now be found using the cv2.findContours() function. To find the contours, certain parameters are set and displayed in the image. It is necessary to set in which area the contours are, with some approximation. An if-loop has also been added to define whether the item has the required number of holes. The final result with the found object, holes, number of openings, and certain correctness of the workpiece is shown in the following image.
 
-![Holes detection](https://github.com/k-karlovic/Item_Sorter/blob/main/images/holes_detection.JPG?raw=true)
+<p align="center">
+  <img width="750" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/holes_detection.JPG?raw=true"/>
+</p>
 
 The correct workpiece would be a 2 hole item, so this workpiece on the image above would be incorrect. Disturbances of light reflection are visible and the contour of the workpiece is not well noticed. The contour could be corrected by changing the defined boundary of the HSV model. Neither interference affects the final result, the program for finding the number of holes spotted the correct number of holes.
 
@@ -95,7 +116,6 @@ Open the arduino_signal.ino scipt in the ArduinoIDE software and transfer the co
 Run the robot.xml script in CPRog software.
 ### 10. Run the `holes_detector.py` script
 The camera must be positioned before the sensor on the conveyor. Place the workpieces on the conveyor and allow the conveyor to bring the workpieces to the sensor where the robotic arm will sort the workpieces.
-
 
 
 
