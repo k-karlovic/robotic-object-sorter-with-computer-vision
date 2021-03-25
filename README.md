@@ -3,6 +3,7 @@ Sorting and controlling items with a certain number of holes by a robotic arm!
 
 ![Item sorter](https://github.com/k-karlovic/Item_Sorter/blob/main/videos/item_sorter.mp4?raw=true)
 
+
 &nbsp;
 ## Table of Contents or Overview
 * [Summary](#summary)
@@ -38,18 +39,20 @@ The Arduino is connected via USB to a computer and is programmed using the Ardui
 
 &nbsp;
 ## Object detection method
-The program starts finding holes only after it detects an object. So it is necessary to choose and adjust the method that detects the object. The chosen method is based on recognition via the HSV color model. It is necessary to set the boundaries within which the color of the object is located. To find these boundaries, the script "hsv_color_detector.py" is attached. It works on the principle of setting the subject to the appropriate position and then pressing the "i" key to save the image. This image is then displayed and the area from which the color boundary is to be drawn can be determined with the mouse. The "c" key completes the determination and three windows are displayed. The first shows the whole image with the area selected. The second image shows only the area that is selected. On the third, the color chosen was converted to white, and the others became black. This shows that the procedure was done correctly, and if black is visible on the object, then the procedure should be repeated.After that, the boundaries min H = {}, min S = {}, min V = {}, max H = {}, max S = {} and max V = {} are thrown out.
-![HSV boundaries](https://github.com/k-karlovic/Item_Sorter/blob/main/images/hsv_boundaries.jpg?raw=true)
-There is also some disturbance in the upper-right edge, which is present due to the reflection of light. The procedure should be repeated or the boundaries should be set manually.
-After that, the boundaries are entered in the script "holes_detector.py". In that script, a kernel is created and parameters are set to find the colors of objects. If a contour is found a red circle is created around the contour.
+The program starts finding holes only after it detects an object. So it is necessary to choose and adjust the method that detects the object. The chosen method is based on recognition via the HSV color model. It is necessary to set the boundaries within which the color of the object is located. To find these boundaries, the script `hsv_color_detector.py` is attached. It works on the principle of setting the subject to the appropriate position and then pressing the "i" key to save the image. This image is then displayed and the area from which the color boundary is to be drawn can be determined with the mouse. The "c" key completes the determination and three windows are displayed. The first shows the whole image with the area selected. The second image shows only the area that is selected. On the third, the color chosen was converted to white, and the others became black. This shows that the procedure was done correctly, and if black is visible on the object, then the procedure should be repeated.After that, the boundaries min H = {}, min S = {}, min V = {}, max H = {}, max S = {} and max V = {} are thrown out.
 
-![Circle](https://github.com/k-karlovic/Item_Sorter/blob/main/images/cirlce.jpg?raw=true)
+![HSV boundaries](https://github.com/k-karlovic/Item_Sorter/blob/main/images/HSV_boundaries.JPG?raw=true)
+
+There is also some disturbance in the upper-right edge, which is present due to the reflection of light. The procedure should be repeated or the boundaries should be set manually.
+After that, the boundaries are entered in the script `holes_detector.py`. In that script, a kernel is created and parameters are set to find the colors of objects. If a contour is found a red circle is created around the contour.
+
+![Circle](https://github.com/k-karlovic/Item_Sorter/blob/main/images/circle.JPG?raw=true)
 
 &nbsp;
 ## Holes detection method
 Once the boundaries of the HSV color rendering model are defined and the object is spotted, an aperture is found. Finding openings is based on finding closed contours. Uploaded images are converted to Grayscale (gray image) and processed using a Threshold. The threshold is binary and inverse with certain parameters. The image is further filtered using a bilateral filter. Edge detection is introduced to the processed image using the Canny Edge detection method and contours can now be found using the cv2.findContours() function. To find the contours, certain parameters are set and displayed in the image. It is necessary to set in which area the contours are, with some approximation. An if-loop has also been added to define whether the item has the required number of holes. The final result with the found object, holes, number of openings, and certain correctness of the workpiece is shown in the following image.
 
-![Holes detection](https://github.com/k-karlovic/Item_Sorter/blob/main/images/holes_detection.jpg?raw=true)
+![Holes detection](https://github.com/k-karlovic/Item_Sorter/blob/main/images/holes_detection.JPG?raw=true)
 
 The correct workpiece would be a 2 hole item, so this workpiece on the image above would be incorrect. Disturbances of light reflection are visible and the contour of the workpiece is not well noticed. The contour could be corrected by changing the defined boundary of the HSV model. Neither interference affects the final result, the program for finding the number of holes spotted the correct number of holes.
 
@@ -82,15 +85,15 @@ Connect the Arduino using a USB cable to the computer
 Download the [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en&gl=US) app on your mobile phone and start the server. Your phone and your computer must be connected to the same wifi.
 
 `You can use any camera, such as a webcam that is connected with a USB cable.`
-### 6. Run the hsv_color_detector.py script
+### 6. Run the `hsv_color_detector.py` script
 Position the workpiece so that it is visible in the image and press the I button to display the workpiece. To determine the color boundary it is necessary to crop the object (press the left mouse button in the upper left corner and release the button in the lower right corner). When you have finished, press the c button and 3 windows will open. On which it is visible that the object is marked in white, and everything else in black. If you are not satisfied, repeat the procedure.
 ### 7. Enter the color boundaries
-Enter the given color boundaries from the previous step in holes_detector.py script under lower and upper.
+Enter the given color boundaries from the previous step in `holes_detector.py` script under lower and upper.
 ### 8. Transfer the code to Arduino
 Open the arduino_signal.ino scipt in the ArduinoIDE software and transfer the code to Arduino.
 ### 9. Run the robot script
 Run the robot.xml script in CPRog software.
-### 10. Run the holes_detector.py script
+### 10. Run the `holes_detector.py` script
 The camera must be positioned before the sensor on the conveyor. Place the workpieces on the conveyor and allow the conveyor to bring the workpieces to the sensor where the robotic arm will sort the workpieces.
 
 
