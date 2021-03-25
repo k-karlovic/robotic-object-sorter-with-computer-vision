@@ -1,4 +1,4 @@
-# Item_Sorter
+# Robotic item sorter with computer vision
 Sorting and controlling items with a certain number of holes by a robotic arm!
 
 ![Item sorter](https://github.com/k-karlovic/Item_Sorter/blob/main/videos/item_sorter.mp4?raw=true)
