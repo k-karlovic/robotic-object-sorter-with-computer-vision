@@ -1,5 +1,5 @@
-# Robotic item sorter with computer vision
-Sorting and controlling items with a certain number of holes by a robotic arm!
+# Robotic object sorter with computer vision
+Sorting and controlling objects with a certain number of holes by a robotic arm!
 <br />
 <br />
 <br />
@@ -125,7 +125,7 @@ After that, the boundaries are entered in the script `holes_detector.py`. In tha
 
 &nbsp;
 ## Holes detection method
-Once the boundaries of the HSV color rendering model are defined and the object is spotted, an aperture is found. Finding openings is based on finding closed contours. Uploaded images are converted to Grayscale (gray image) and processed using a Threshold. The threshold is binary and inverse with certain parameters. The image is further filtered using a bilateral filter. Edge detection is introduced to the processed image using the Canny Edge detection method and contours can now be found using the cv2.findContours() function. To find the contours, certain parameters are set and displayed in the image. It is necessary to set in which area the contours are, with some approximation. An if-loop has also been added to define whether the item has the required number of holes. The final result with the found object, holes, number of openings, and certain correctness of the workpiece is shown in the following image.
+Once the boundaries of the HSV color rendering model are defined and the object is spotted, an aperture is found. Finding openings is based on finding closed contours. Uploaded images are converted to Grayscale (gray image) and processed using a Threshold. The threshold is binary and inverse with certain parameters. The image is further filtered using a bilateral filter. Edge detection is introduced to the processed image using the Canny Edge detection method and contours can now be found using the cv2.findContours() function. To find the contours, certain parameters are set and displayed in the image. It is necessary to set in which area the contours are, with some approximation. An if-loop has also been added to define whether the object has the required number of holes. The final result with the found object, holes, number of openings, and certain correctness of the workpiece is shown in the following image.
 <br />
 <br />
 <p align="center">
@@ -133,7 +133,7 @@ Once the boundaries of the HSV color rendering model are defined and the object 
 </p>
 <br />
 
-The correct workpiece would be a 2 hole item, so this workpiece on the image above would be incorrect. Disturbances of light reflection are visible and the contour of the workpiece is not well noticed. The contour could be corrected by changing the defined boundary of the HSV model. Neither interference affects the final result, the program for finding the number of holes spotted the correct number of holes.
+The correct workpiece would be a 2 hole object, so this workpiece on the image above would be incorrect. Disturbances of light reflection are visible and the contour of the workpiece is not well noticed. The contour could be corrected by changing the defined boundary of the HSV model. Neither interference affects the final result, the program for finding the number of holes spotted the correct number of holes.
 
 &nbsp;
 ## Conclusion
