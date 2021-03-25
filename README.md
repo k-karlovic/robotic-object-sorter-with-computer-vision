@@ -4,7 +4,7 @@ Sorting and controlling objects with a certain number of holes by a robotic arm!
 <br />
 <br />
 <p align="center">
-  <a href="https://youtu.be/jOdGGo3MNKM"> <img width="750" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/youtube_image.png?raw=true"/> </a>
+  <a href="https://youtu.be/jOdGGo3MNKM"> <img width="90%" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/youtube_image.png?raw=true"/> </a>
 </p>
 
 &nbsp;
@@ -71,7 +71,7 @@ The robotic arm consists of 4 axes, which allow work in space. At the end of the
 <br />
 <br />
 <p align="center">
-  <img width="300" height="400" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/robot.jpg?raw=true"/>
+  <img width="30%" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/robot.jpg?raw=true"/>
 </p>
 <br />
 D-Sub Male consists of 9 pins of which pins 4, 5, 6, and 7 are input pins.
@@ -79,7 +79,7 @@ D-Sub Male consists of 9 pins of which pins 4, 5, 6, and 7 are input pins.
 <br />
 <br />
 <p align="center">
-  <img width="450" height="250" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/pins_on_robot_arm.PNG?raw=true"/>
+  <img width="40%" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/pins_on_robot_arm.PNG?raw=true"/>
 </p>
 
 &nbsp;
@@ -92,7 +92,7 @@ The conveyor is used to transport the object from one workplace to another, and 
 <br />
 <br />
 <p align="center">
-  <img width="500" height="300" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/conveyor.jpg?raw=true"/>
+  <img width="50%" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/conveyor.jpg?raw=true"/>
 </p>
 
 &nbsp;
@@ -101,7 +101,7 @@ The Arduino is connected via USB to a computer and is programmed using the Ardui
 <br />
 <br />
 <p align="center">
-  <img width="300" height="300" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/arduino.jpg?raw=true"/>
+  <img width="30%" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/arduino.jpg?raw=true"/>
 </p>
 
 &nbsp;
@@ -110,7 +110,7 @@ The program starts finding holes only after it detects an object. So it is neces
 <br />
 <br />
 <p align="center">
-  <img width="750" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/HSV_boundaries.JPG?raw=true"/>
+  <img width="90%" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/HSV_boundaries.JPG?raw=true"/>
 </p>
 <br />
 
@@ -120,7 +120,7 @@ After that, the boundaries are entered in the script `holes_detector.py`. In tha
 <br />
 
 <p align="center">
-  <img width="300" height="250" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/circle.JPG?raw=true"/>
+  <img width="30%" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/circle.JPG?raw=true"/>
 </p>
 
 &nbsp;
@@ -129,7 +129,7 @@ Once the boundaries of the HSV color rendering model are defined and the object 
 <br />
 <br />
 <p align="center">
-  <img width="750" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/holes_detection.JPG?raw=true"/>
+  <img width="90%" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/holes_detection.JPG?raw=true"/>
 </p>
 <br />
 
