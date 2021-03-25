@@ -72,8 +72,10 @@ The robotic arm consists of 4 axes, which allow work in space. At the end of the
 <p align="center">
   <img width="300" height="400" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/robot.jpg?raw=true"/>
 </p>
+<br />
 D-Sub Male consists of 9 pins of which pins 4, 5, 6, and 7 are input pins.
 <br />
+
 <br />
 <p align="center">
   <img width="450" height="250" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/pins_on_robot_arm.PNG?raw=true"/>
@@ -110,7 +112,7 @@ The program starts finding holes only after it detects an object. So it is neces
   <img width="750" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/HSV_boundaries.JPG?raw=true"/>
 </p>
 <br />
-<br />
+
 There is also some disturbance in the upper-right edge, which is present due to the reflection of light. The procedure should be repeated or the boundaries should be set manually.
 After that, the boundaries are entered in the script `holes_detector.py`. In that script, a kernel is created and parameters are set to find the colors of objects. If a contour is found a red circle is created around the contour.
 <br />
@@ -129,7 +131,7 @@ Once the boundaries of the HSV color rendering model are defined and the object 
   <img width="750" height="350" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/holes_detection.JPG?raw=true"/>
 </p>
 <br />
-<br />
+
 The correct workpiece would be a 2 hole item, so this workpiece on the image above would be incorrect. Disturbances of light reflection are visible and the contour of the workpiece is not well noticed. The contour could be corrected by changing the defined boundary of the HSV model. Neither interference affects the final result, the program for finding the number of holes spotted the correct number of holes.
 
 &nbsp;
