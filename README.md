@@ -29,7 +29,7 @@ For this project, a 4-axis Mover4 robot, a Samsung S8+ mobile phone camera with 
 ### Robotic arm Mover4
 The robotic arm consists of 4 axes, which allow work in space. At the end of the robotic arm, various tools (electromagnet or gripper) can be placed. With a radius of 55 cm, the robot can lift objects weighing 500g.
 <p align="center">
-  <img width="350" height="450" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/robot_arm.jpg?raw=true"/>
+  <img width="350" height="450" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/robot.jpg?raw=true"/>
 </p>
 
 &nbsp;
