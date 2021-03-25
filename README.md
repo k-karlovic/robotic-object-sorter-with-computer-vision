@@ -23,6 +23,7 @@ Sorting and controlling items with a certain number of holes by a robotic arm!
 &nbsp;
 ## Summary
 This project involves finding a defined workpiece with holes on the conveyor, controlling the number of holes on the workpiece, and sorting them using a robotic arm. The workpiece on the conveyor is detected by the HSV model of the color space over the camera. Using functions in OpenCV (cv2.Canny() and cv2.findContours()) holes (closed contours) are found on the workpiece. Closed contours are counted, and the workpieces are sorted by a robotic arm into correct and incorrect workpieces.
+
 &nbsp;
 ## Setup
 ### 1. Equipment
@@ -43,6 +44,12 @@ This project involves finding a defined workpiece with holes on the conveyor, co
 To install the necessary packages in python run **`pip install -r requirements.txt`**.
 ### 3. Connect the Arduino with the robotic arm
 Connect one end of the wire to pin 12 on the Arduino and the other end to pin 4 on the robot arm. Connect another wire to pin 13 on the Arduino and pin 5 on the robotic arm.
+<br />
+<br />
+<p align="center">
+  <img width="450" height="300" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/pins_on_robot_arm.PNG?raw=true"/>
+</p>
+
 ### 4. Connect the Arduino with the computer
 Connect the Arduino using a USB cable to the computer
 ### 5. Connect the cammera with the computer
@@ -82,7 +89,7 @@ The conveyor is used to transport the object from one workplace to another, and 
 <br />
 <br />
 <p align="center">
-  <img width="400" height="300" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/conveyor.jpg?raw=true"/>
+  <img width="500" height="300" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/conveyor.jpg?raw=true"/>
 </p>
 
 &nbsp;
@@ -108,8 +115,9 @@ There is also some disturbance in the upper-right edge, which is present due to 
 After that, the boundaries are entered in the script `holes_detector.py`. In that script, a kernel is created and parameters are set to find the colors of objects. If a contour is found a red circle is created around the contour.
 <br />
 <br />
+<br />
 <p align="center">
-  <img width="350" height="300" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/circle.JPG?raw=true"/>
+  <img width="300" height="250" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/circle.JPG?raw=true"/>
 </p>
 
 &nbsp;
