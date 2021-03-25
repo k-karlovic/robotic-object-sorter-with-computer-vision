@@ -43,13 +43,7 @@ This project involves finding a defined workpiece with holes on the conveyor, co
 
 To install the necessary packages in python run **`pip install -r requirements.txt`**.
 ### 3. Connect the Arduino with the robotic arm
-Connect one end of the wire to pin 12 on the Arduino and the other end to pin 4 on the robot arm. Connect another wire to pin 13 on the Arduino and pin 5 on the robotic arm.
-<br />
-<br />
-<p align="center">
-  <img width="450" height="300" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/pins_on_robot_arm.PNG?raw=true"/>
-</p>
-
+Connect one end of the wire to pin 12 on the Arduino and the other end to pin 4 on the robot arm. Connect another wire to pin 13 on the Arduino and pin 5 on the robotic arm. For more see [here](#robotic-arm-mover4).
 ### 4. Connect the Arduino with the computer
 Connect the Arduino using a USB cable to the computer
 ### 5. Connect the cammera with the computer
@@ -77,6 +71,12 @@ The robotic arm consists of 4 axes, which allow work in space. At the end of the
 <br />
 <p align="center">
   <img width="300" height="400" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/robot.jpg?raw=true"/>
+</p>
+D-Sub Male consists of 9 pins of which pins 4, 5, 6, and 7 are input pins.
+<br />
+<br />
+<p align="center">
+  <img width="450" height="250" src="https://github.com/k-karlovic/Item_Sorter/blob/main/images/pins_on_robot_arm.PNG?raw=true"/>
 </p>
 
 &nbsp;
