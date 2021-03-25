@@ -56,9 +56,9 @@ Position the workpiece so that it is visible in the image and press the I button
 ### 7. Enter the color boundaries
 Enter the given color boundaries from the previous step in `holes_detector.py` script under lower and upper.
 ### 8. Transfer the code to Arduino
-Open the arduino_signal.ino scipt in the ArduinoIDE software and transfer the code to Arduino.
+Open the `arduino_signal.ino` scipt in the ArduinoIDE software and transfer the code to Arduino.
 ### 9. Run the robot script
-Run the robot.xml script in CPRog software.
+Run the `robot.xml` script in CPRog software.
 ### 10. Run the `holes_detector.py` script
 The camera must be positioned before the sensor on the conveyor. Place the workpieces on the conveyor and allow the conveyor to bring the workpieces to the sensor where the robotic arm will sort the workpieces. For more see [here](#holes-detection-method).
 
