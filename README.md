@@ -43,16 +43,16 @@ This project involves finding a defined workpiece with holes on the conveyor, co
 * [Python](https://www.python.org/downloads/)
 
 To install the necessary packages in python run **`pip install -r requirements.txt`**.
-### 3. Connect the Arduino with the robotic arm
+### 3. Connect Arduino with the robotic arm
 Connect one end of the wire to pin 12 on the Arduino and the other end to pin 4 on the robot arm. Connect another wire to pin 13 on the Arduino and pin 5 on the robotic arm. For more see [here](#robotic-arm-mover4).
-### 4. Connect the Arduino with the computer
-Connect the Arduino using a USB cable to the computer
-### 5. Connect the cammera with the computer
-Download the [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en&gl=US) app on your mobile phone and start the server. Your phone and your computer must be connected to the same wifi.
+### 4. Connect Arduino with the computer
+Connect Arduino using a USB cable to the computer
+### 5. Connect the camera with the computer
+Download [IP Webcam](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en&gl=US) app on your mobile phone and start the server. Your phone and your computer must be connected to the same wifi.
 
 You can use any camera, such as a webcam that is connected with a USB cable.
 ### 6. Run the `hsv_color_detector.py` script
-Position the workpiece so that it is visible in the image and press the I button to display the workpiece. To determine the color boundary it is necessary to crop the object (press the left mouse button in the upper left corner and release the button in the lower right corner). When you have finished, press the c button and 3 windows will open. On which it is visible that the object is marked in white, and everything else in black. If you are not satisfied, repeat the procedure. For more see [here](#object-detection-method).
+Position the workpiece so that it is visible in the image and press the I button to display the workpiece. To determine the color boundary it is necessary to crop the object (press the left mouse button in the upper left corner and release the button in the lower right corner). When you have finished, press the c button and 3 windows will open. Object will be displayed and marked in white. If you are not satisfied, repeat the procedure. For more see [here](#object-detection-method).
 ### 7. Enter the color boundaries
 Enter the given color boundaries from the previous step in `holes_detector.py` script under lower and upper.
 ### 8. Transfer the code to Arduino
