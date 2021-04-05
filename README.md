@@ -8,7 +8,7 @@ Sorting and controlling objects with a certain number of holes by a robotic arm!
 </p>
 
 &nbsp;
-## Table of Contents or Overview
+## Table of Contents
 * [Summary](#summary)
 * [Setup](#setup)
 * [Equipment](#equipment)
